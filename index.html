@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angel's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="banner">
+  <img src="banner.png" alt="Banner" class="banner-bg" />
+  <div class="profile-content">
+    <img src="profile.jpg" alt="Profile" class="profile-pic" />
+    <h1 class="username">🌟 Aggelosyea's Portfolio 🌟</h1>
+    <div id="tags" class="tags"></div>
+  </div>
+</div>
+
+  <h1 class="Credits">I built this from scratch with HTML! :3</h1>
+<h1 class="WIP_Text">⚠ This is not open, but it exists because im prob gonna be using it in the future [W.I.P.] ⚠</h1> 
+
+
+  <script>
+    const workTags = ["@Aggelosyea", "@AggelosAlt3"];
+    let index =1;
+
+    function displayTag() {
+      document.getElementById("tags").textContent = workTags[index];
+      index = (index + 1) % workTags.length;
+    }
+
+    setInterval(displayTag, 1500);
+    displayTag();
+  </script>
+
+<div class="bottom-buttons">
+  <a href="https://discord.com/users/1211760774125457441" target="_blank">
+    <img src="discord.png" alt="Discord" class="icon-button" />
+  </a>
+  <a href="https://www.roblox.com/users/5803335377/profile" target="_blank">
+    <img src="roblox.png" alt="Roblox" class="icon-button" />
+  </a>
+</div>
+
+
+</body>
+
+<div class="button-row">
+  <a href="about.html"  class="btn">About Me</a>
+  <a href="MyWork.html"  class="btn">My Work</a>
+</div>
+
+<div class="pricing-button">
+  <a href="MyPricings.html" class="btn">My Pricings</a>
+</div>
+
+<script>
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutSection = document.getElementById("aboutSection");
+
+  aboutBtn.addEventListener("click", () => {
+    const isVisible = aboutSection.style.display === "block";
+    aboutSection.style.display = isVisible ? "none" : "block";
+  });
+</script>
+
+</html>

@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #383838;
+  text-align: center;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #333;
+  transition: transform 0.3s ease;
+    margin-top: -30px; /* 👈 pulls it upward */
+}
+
+.profile-content {
+  position: relative;
+  z-index: 2; /* Keeps it above the banner image */
+  text-align: center;
+  padding-top: 40px; /* Pushes it down so it’s not crammed at the top */
+}
+
+/*
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+*/
+.username {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: -10px; /* 👈 pulls it upward */
+}
+
+
+
+
+/*
+.username:hover {
+  color: #7eafe7;
+  transform: scale(1.05);
+}
+  */
+
+.tags {
+  color: #dddddd;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+   margin-top: -20px; /* 👈 pulls it upward */
+}
+
+/*
+.tags:hover {
+  color: #ff6600;
+  font-weight: bold;
+  cursor: pointer;
+}
+  */
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .username {
+    font-size: 1.5rem;
+  }
+
+  .tags {
+    font-size: 1rem;
+  }
+  
+}
+
+
+
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40vw;
+  background-color: #f4f4f400;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .bottom-buttons {
+    padding: 20px 35vw;
+  }
+}
+
+
+
+.icon-button {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Lower it behind content */
+}
+
+
+
+
+.Credits {
+ font-size: 0.8rem;     /* Controls the size */
+     font-weight: normal;
+  color: #dddddd;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+  bottom: 0;
+position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+     text-align: center;
+       padding: 10px 0;
+
+         display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if needed */
+}
+
+.WIP_Text {
+ font-size: 1.0rem;     /* Controls the size */
+     font-weight: normal;
+  color: #ffc400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+  bottom: 0;
+position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+     text-align: center;
+       padding: 60px 0;
+
+         display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically if needed */
+}
+
+.button-row {
+  display: flex;
+  justify-content: center; /* 👈 centers the buttons */
+  gap: 20px;                /* 👈 adds space between them */
+  padding: 20px;
+  flex-wrap: wrap;          /* 👈 allows wrapping on small screens */
+}
+
+.pricing-button {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 45px;
+  font-size: 1rem;
+  background-color: #1d4d80;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005fcc;
+}
+
+/* TESTING FOR THE MYWORK SCRIPT!*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
