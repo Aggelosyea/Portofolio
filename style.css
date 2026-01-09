@@ -1,8 +1,17 @@
+.page-wrapper {
+  width: 100%;
+  max-width: 500px;   /* controls how wide your whole page can get */
+  margin: 0 auto;     /* centers the entire page */
+  padding: 0 20px;    /* prevents content from touching screen edges */
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #383838;
+  background-color: #0c0c0c;
   text-align: center;
 }
 
@@ -15,7 +24,7 @@ body {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #333;
+  border: 4px solid #b6e3e9;
   transition: transform 0.3s ease;
     margin-top: -30px; /* 👈 pulls it upward */
 }
@@ -49,7 +58,7 @@ body {
   */
 
 .tags {
-  color: #dddddd;
+  color: #ffd000;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
    margin-top: -20px; /* 👈 pulls it upward */
 }
@@ -74,7 +83,7 @@ body {
   }
 
   .tags {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
 }
@@ -82,13 +91,47 @@ body {
 
 
 
-.bottom-buttons {
+.bottom-buttons { /* bottom buttons = links for my other stuff etc*/
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 40vw;
+  justify-content: center;
+  gap: 20px;
+flex-wrap: nowrap;
+  padding: 30px;
   background-color: #f4f4f400;
+overflow-x: auto;
 }
+
+.bottom-buttons img {
+  width: 40px;   /* make smaller */
+  height: 40px;
+  object-fit: contain;
+  border-radius: 5px; /* 👈 smooth corners */
+}
+
+.bottom-buttons img { transition: transform 0.2s ease; }
+ .bottom-buttons img:hover { transform: scale(1.15); }
+
+
+ .bottom-buttons img:hover { transform: scale(1.15); }
+
+.bottom-buttons img:active {
+   transform: scale(0.95); /* shrink when pressed */
+}
+
+.youtube-btn:hover {
+  background-color: #ff4d4d;
+}
+
+.discord-btn:hover {
+  background-color: #775bc2;
+}
+
+.roblox-btn:hover {
+  background-color: #4d94ff;
+}
+
+
+
 
 @media (max-aspect-ratio: 1/1) {
   .bottom-buttons {
@@ -115,7 +158,9 @@ body {
   width: 100%;
   height: 250px;
   overflow: hidden;
+
 }
+
 
 .banner-bg {
   position: absolute;
@@ -166,17 +211,84 @@ position: absolute;
   align-items: center;     /* centers vertically if needed */
 }
 
-.button-row {
+.button-row a,
+.button-row button {
+  width: 100%;
+  max-width: 170px;
+  height: 40px;
+
   display: flex;
-  justify-content: center; /* 👈 centers the buttons */
-  gap: 20px;                /* 👈 adds space between them */
-  padding: 20px;
-  flex-wrap: wrap;          /* 👈 allows wrapping on small screens */
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+
+  border: 1px solid #F3F3F3;
+  border-radius: 4px;
+
+background: linear-gradient(to bottom,
+  #eef4ff 0%,   /* tiny blue tint */
+  #e3e9f7 50%,  /* still mostly gray */
+  #d5dbea 51%,  /* subtle cool tone */
+  #c7ccdd 100%  /* soft blue-gray */
+);
+
+
+  box-shadow: 0 0 0 1px #707070;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.button-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.button-row a,
+.button-row button {
+  transition: transform 0.2s ease;
+}
+
+.button-row a:hover,
+.button-row button:hover {
+  border: 1px solid #ECF7FD;
+  box-shadow: 0 0 0 1px #3C7FB1;
+
+  background: linear-gradient(to bottom,
+    #EAF6FD 0%,
+    #D9F0FC 50%,
+    #BEE6FD 51%,
+    #A7D9F5 100%
+  );
+
+  transform: scale(1.05);
+}
+
+.button-row a:active, 
+.button-row button:active {
+   transform: scale(0.95); /* shrink when pressed */
 }
 
 .pricing-button {
   text-align: center;
   margin-top: 10px;
+}
+
+.Script_Examples {
+  text-align: center;
+  margin-top: 40px;
 }
 
 .btn {
@@ -191,8 +303,11 @@ position: absolute;
 }
 
 .btn:hover {
-  background-color: #005fcc;
+  background-color: #59a5fc;
 }
+
+
+
 
 /* TESTING FOR THE MYWORK SCRIPT!*/
 img {
@@ -201,4 +316,125 @@ img {
   margin-right: auto;
   max-width: 100%;
   height: auto;
+}
+
+.banner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0.05; 
+  z-index: -1;
+  pointer-events: none;
+
+  animation: bgGlow 3s ease-in-out infinite;
+}
+
+@keyframes bgGlow {
+  0%   { opacity: 0.05; }
+  50%  { opacity: 0.22; } /* brighter glow */
+  100% { opacity: 0.05; }
+}
+
+
+.back-button {
+  margin-top: 40px;
+}
+
+.back-button .btn {
+  width: 100%;
+  max-width: 120px;
+  height: 40px;
+
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+
+  border: 1px solid #F3F3F3;
+  border-radius: 4px;
+  z-index: 9999;
+
+  background: linear-gradient(to bottom,
+    #eef4ff 0%,
+    #e3e9f7 50%,
+    #d5dbea 51%,
+    #c7ccdd 100%
+  );
+
+  box-shadow: 0 0 0 1px #707070;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button .btn:hover {
+  border: 1px solid #ECF7FD;
+  box-shadow: 0 0 0 1px #3C7FB1;
+
+  background: linear-gradient(to bottom,
+    #EAF6FD 0%,
+    #D9F0FC 50%,
+    #BEE6FD 51%,
+    #A7D9F5 100%
+  );
+
+  transform: translateX(-50%) scale(1.05);
+}
+
+
+.back-button .btn:active {
+  border: 1px solid #73A7C4;
+  box-shadow: 0 0 0 1px #2C628B;
+
+  background: linear-gradient(to bottom,
+    #E5F4FC 0%,
+    #C4E5F6 50%,
+    #98D1EF 51%,
+    #68B3DB 100%
+  );
+
+  transform: translateX(-50%) scale(0.95);
+}
+
+
+
+.centeredBut { /* prolly only used for when selecting multiple windows.
+   but wanting the buts to be at center of  screen too!*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+video {
+  display: block;
+  margin: 20px auto; /* centers horizontally */
+}
+
+.tenor-gif-embed { /* rick roll gif XD */
+  margin: 0 auto;
+  display: block;
+}
+
+.left-text {
+  text-align: left;
 }

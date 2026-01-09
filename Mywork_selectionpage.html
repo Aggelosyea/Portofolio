@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angel's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+
+ 
+<center>
+<div class="centeredBut">
+  <div class="button-row">
+    <a href="MyAnimations.html" class="btn">Animation</a>
+    <a href="My3Dmodels.html" class="btn">3D Models</a>
+    <a href="GamesNscripts.html" class="btn">Games & code</a>
+     <a href="MyBuilds.html" class="btn">Building</a>
+      <a href="Art.html" class="btn">Art-Artstyle</a>
+       <a href="UIDesing.html" class="btn">UI Desing</a>
+  </div>
+
+
+ <div class="button-row back-button">
+  <a href="index.html" class="btn">Back</a>
+</div>
+<br> <!-- pushes Back button slightly upward -->
+<br> <!-- pushes Back button slightly upward -->
+</div>
+
+</center>
+
+ 
+  <h1 class="Credits">This is the void... Nah i'm just kidding! haha i'm very funni.. :d</h1> 
+
+</body>
+
+
+
+
+<script>
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutSection = document.getElementById("aboutSection");
+
+  aboutBtn.addEventListener("click", () => {
+    const isVisible = aboutSection.style.display === "block";
+    aboutSection.style.display = isVisible ? "none" : "block";
+  });
+</script>
+
+</html>
